@@ -25,18 +25,14 @@ def solution(n, lost, reserve):
         if i in reserve:
             reserve.remove(i)
             lost.remove(i)
-           
-    student=0 #참여 못하는 학생 수
-    
-    for i in lost:
+         
+    for i in reserve:
         p= i-1
         q= i+1
-        if(p not in reserve) and (q not in reserve):
-            student+=1
-        elif(p in reserve):
-            reserve.remove(p)
-        else:
-            reserve.remove(q)
-    result=n-student
+        if(p in lost):
+            lost.remove(p)
+        elif(q in lost):
+            lost.remove(q)
+    result=n-len(lost)
     
     return result
