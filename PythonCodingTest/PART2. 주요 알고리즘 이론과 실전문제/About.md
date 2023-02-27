@@ -61,9 +61,34 @@
   * math: 필수적인 수학적 기능을 제공하는 라이브러리. 팩토리얼, 제곱근, 최대공약수(GCD-greatest common divisor), 삼각함수 관련 함수부터 pi와 같은 상수를 포함
   #### 1. Built in functions
   * import 명령어 없이 바로 사용할 수 있는 내장 함수
-  * iterable object: any object that can return its elements one at a time. This includes objects like lists, tuples, dictionaries, sets, strings, and generators.
   * ```sum(iterable,/,start=0)```
-    - 
+    - **iterable object** : any object that can return its elements one at a time. This includes objects like lists, tuples, dictionaries, sets, strings, and generators.
+    - Sums *start* and the items of an *iterable* from left to right and returns the total. 
+    - The *iterable's* items are normally numbers, and the start value is not allowed to be a string. 
+    ```python
+     # sum()
+     numbers = [1,2,3,4,5,1,4,5]
+     # start parameter is not provided
+     Sum = sum(numbers)
+     print(Sum)
+     # start = 10
+     Sum = sum(numbers, 10)
+     print(Sum)
+    ```
+  *```sorted(iterable,/,*,key=None, reverse=False)```
+   - Return a new sorted list from the items in *iterable*.
+   - Has two optional arguments which must be specified as keyword arguments.
+   - **key** specifies a function of one argument that is used to extract a comparison key from each element in iterable(ex, key=str.lower). The default value is None(compare the lements directly). 특정 기준에 따라 정렬하는 것.
+   ```python
+   result= sorted([('홍길동,35), ('이순신',75),('아무개',50)], key=lamda x:x[1],reverse=True)
+   print(result)
+   
+   #두 번째 원소를 기준으로 내림차순으로 정렬한다.
+   #Output: [('이순신',75), ('아무개,50),('홍길동',35)]
+   ```
+   - **reverse** is a boolean value. If set to True, then the list elements are sorted as if each comparison were reversed.
+   - 리스트와 같은 iterable 객체는 기본으로 sort()함수를 내장하고 있어서 굳이 sorted()함수를 사용하지 않고도 sort()함수를 사용해 정렬 가능하다. 오름차순 정렬 
+   
   
 ********************************  
 
