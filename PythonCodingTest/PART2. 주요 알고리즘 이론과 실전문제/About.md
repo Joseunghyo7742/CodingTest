@@ -75,7 +75,7 @@
      Sum = sum(numbers, 10)
      print(Sum)
     ```
-  *```sorted(iterable,/,*,key=None, reverse=False)```
+  * ```sorted(iterable,/,*,key=None, reverse=False)```
    - Return a new sorted list from the items in *iterable*.
    - Has two optional arguments which must be specified as keyword arguments.
    - **key** specifies a function of one argument that is used to extract a comparison key from each element in iterable(ex, key=str.lower). The default value is None(compare the lements directly). 특정 기준에 따라 정렬하는 것.
