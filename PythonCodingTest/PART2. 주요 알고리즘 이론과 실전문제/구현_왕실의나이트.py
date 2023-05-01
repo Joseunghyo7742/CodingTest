@@ -10,5 +10,4 @@ for step in steps:
   nc=current_c+step[1]
   if(0<nr<9 and 0<nc<9):
     count+=1
-    
 print(count)
