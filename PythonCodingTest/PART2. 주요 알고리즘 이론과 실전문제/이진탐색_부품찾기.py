@@ -15,8 +15,7 @@ n = int(input())
 product = list(map(int, input().split()))
 m = int(input())
 request = list(map(int, input().split()))
-product = sorted(product)
-request = sorted(request)
+product.sort()
 
 
 for i in range(m):
