@@ -7,3 +7,5 @@ def solution(clothes):
         answer*=(i+1)
     answer-=1
     return answer
+
+
