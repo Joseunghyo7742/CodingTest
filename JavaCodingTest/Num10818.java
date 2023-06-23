@@ -11,12 +11,16 @@ public class Num10818 {
     int n = sc.nextInt();
     int[] arr= new int[n];
 
-
+    // Arrays.sort(arr);
+    // System.out.println(arr[0]+" "+arr[n-1]);
     int max= -1000000;
     int min= 1000000;
+
     for (int i=0; i< n; i++){
       arr[i]=sc.nextInt();
     }
+
+    
     for (int j=0; j<n; j++){
       if(arr[j]>max){
         max= arr[j];
@@ -26,5 +30,7 @@ public class Num10818 {
       }
     }
     System.out.printf("%d %d",min, max);
+
+
   }
 }
