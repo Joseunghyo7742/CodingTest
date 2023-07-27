@@ -1,6 +1,6 @@
 import sys
 sys.setrecursionlimit(10**6) #재귀호출 제한을 늘림
-input= sys.stdin.readlinen
+input= sys.stdin.readline
 
 n,m= map(int,input().split())
 arr= [[0]*n for _ in range(n)] #n*n행렬
