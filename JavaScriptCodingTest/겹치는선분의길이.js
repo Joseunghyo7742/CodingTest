@@ -1,6 +1,6 @@
 function solution(lines) {
   let arr= new Array(200).fill(0);
-  let min= 100
+  let min= 100 
   let max= -100
   let result=0
   for(let [s,e] of lines) {
