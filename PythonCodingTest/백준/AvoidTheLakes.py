@@ -1,3 +1,7 @@
+import sys
+sys.setrecursionlimit(10**6) #재귀호출 제한을 늘림
+input = sys.stdin.readline
+
 n,m,k= map(int,input().split()) #n: row, m:column k: submerged
 
 field= [[0]*m for _ in range(n)]
