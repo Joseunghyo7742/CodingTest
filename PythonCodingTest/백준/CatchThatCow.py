@@ -15,16 +15,14 @@ else:
       break
     else:
       cnt+=1
-      if current-1 not in visited:
+      if current-1 not in visited: 
         queue.append((current-1,cnt))
         visited.add(current-1)
-        print("current-1:",current-1,"cnt:",cnt)
-      if current < k:
+      if current < k:# 농부의 위치가 소보다 오른쪽에 있으면 계산할 필요가 없음.
         if current+1 not in visited:
           queue.append((current+1,cnt))
           visited.add(current+1)
-          print("current+1:",current+1,"cnt:",cnt)
         if current*2 not in visited:
           queue.append((2*current, cnt))
           visited.add(current*2)
-          print("current*2:",current*2,"cnt:",cnt)
+          
