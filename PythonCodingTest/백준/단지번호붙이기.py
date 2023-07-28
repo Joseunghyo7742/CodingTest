@@ -12,7 +12,6 @@ for i in range(n):
   arr.append(list(map(int,input()))) 
   
 def dfs(x,y):
-  global size;
   for k in range(4): #동서남북 확인
     nx= x+dx[k]
     ny= y+dy[k]
