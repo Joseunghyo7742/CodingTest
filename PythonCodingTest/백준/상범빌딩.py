@@ -17,7 +17,7 @@ def bfs(z,x,y,cnt):
       
       if(0<=nz<L and 0<=nx<R and 0<=ny<C and building[nz][nx][ny]!="#"):
         if(building[nz][nx][ny]=="E"): return cnt+1
-        building[nz][nx] = building[nz][nx][:ny] + "#" + building[nz][nx][ny + 1:]
+        #building[nz][nx] = building[nz][nx][:ny] + "#" + building[nz][nx][ny + 1:]
         queue.append((nz,nx,ny,cnt+1))
   return 0
 
