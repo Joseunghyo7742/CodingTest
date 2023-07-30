@@ -29,11 +29,9 @@ ripen(rippend)
 result=0
 for i in box:
   if 0 in i:
-    result=-1
+    result=-1 # 모두 익지 않은 경우
     break
-  result= max(max(i),result)
+  result= max(max(i)-1,result)
 
-if(result==-1): print(result)
-else: print(result-1)
+print(result)
 
-#모두 익지 못하는 상황 고려 필요
