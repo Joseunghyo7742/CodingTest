@@ -10,7 +10,7 @@ for _ in range(n):
 dx=[-1,1,0,0]
 dy=[0,0,-1,1]
 
-switch = 1
+switch = 1 #적록색약 구분을 위함
 def dfs(x,y):
   visited[x][y]=switch
   color= pic[x][y]
@@ -27,7 +27,7 @@ visited=[[0]*n for _ in range(n)]
 a=0 #적록색약 아닌 사람
 tmp=0
 
-for c in range(2):
+for c in range(2): #적록색약일 경우와 아닌 경우 실행
   for i in range(n):
     for j in range(n):
       if(visited[i][j]!=switch):
@@ -41,6 +41,6 @@ for c in range(2):
       for j in range(n):
         if(pic[i][j]=="G"):
           pic[i][j]="R"
-  switch=0
+  switch=0 #적록색약일 경우
 
 print(a,tmp)
