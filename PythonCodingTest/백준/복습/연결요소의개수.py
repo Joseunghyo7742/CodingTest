@@ -1,3 +1,6 @@
+import sys
+sys.setrecursionlimit(10**6) #재귀호출 제한을 늘림
+input= sys.stdin.readline
 #정점의 개수 N, 간선의 개수 M
 n,m = map(int,input().split())
 arr= [[0]*n for _ in range(n)]

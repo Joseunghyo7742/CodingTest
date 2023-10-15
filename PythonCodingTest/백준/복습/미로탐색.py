@@ -6,8 +6,7 @@ maze=[]
 for i in range (n):
   maze.append(list(map(int,input()))) 
 
-#우,하,좌,상 순 => 탈출구는 매번 우측하단이니까 BFS를 했을 때 이 순서로 해야 좀 더 빠르게 탐색할 거라고 판단.
-d_column=[0,1,0,-1]
+d_column=[0,1,0,-1] 
 d_row=[1,0,-1,0]
 
 def bfs(c,r):
@@ -26,7 +25,7 @@ def bfs(c,r):
       if(maze[n_column][n_row]==1):
         maze[n_column][n_row]= maze[c][r]+1 #비용 입력
         queue.append((n_column,n_row))
-        
+  #먼저 도착하지 않은 큐 요소들은 어차피 ==1에서 걸림.
   return maze[n-1][m-1]
 
 print(bfs(0,0))
