@@ -16,8 +16,8 @@ d_r=[0,0,-1,1]
 
 result=0 #제일 넓은 lake의 넓이
 count=1 #lake만날 때 카운트 시작
+
 def dfs(c,r):
-  global result
   global count
 #이미 방문한 submerged지역은  0으로 변경
   farm[c][r]=0 
@@ -27,7 +27,6 @@ def dfs(c,r):
     if(new_c<0 or new_c>=n or new_r<0 or new_r>=m):
       continue
     if(farm[new_c][new_r]==1):
-      farm[new_c][new_r]=0
       count+=1
       dfs(new_c,new_r)
 

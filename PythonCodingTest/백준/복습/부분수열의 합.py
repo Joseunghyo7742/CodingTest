@@ -9,7 +9,7 @@ result=0
 def dfs(sum, index):
   global result
 
-  if(index>=n):
+  if(index==n):
     return
   new_sum= sum+ arr[index]
   if(new_sum==s):
