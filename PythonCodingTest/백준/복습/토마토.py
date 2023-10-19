@@ -12,7 +12,7 @@ queue=deque()
 for i in range(n):
   for j in range(m):
     if box[i][j]==1:
-      queue.append((i,j,0))
+      queue.append((i,j,1))
       
 while queue:
   c,r,day = queue.popleft()
@@ -30,20 +30,10 @@ while queue:
     box[new_c][new_r]=day+1
     queue.append((new_c,new_r,day+1))
       
-max_day=1
-for i in range(n):
-  for j in range(m):
-    if box[i][j]==0:
-      print(-1)
-      exit()
-    if box[i][j]>max_day:
-      max_day= box[i][j]
-
-
 result=0
 for i in box:
   if 0 in i:
     result=-1
     break
-  result= max(max(i)-1,result) #위에 bfs에서 날짜 카운트시 하루지났을 때 2일차로 치기때문
+  result= max(max(i)-1,result)
 print(result)
