@@ -125,3 +125,5 @@ console.log(dateTest)
 const date2= "1999.02.03"
 const arrrr= date2.split(".").map(Number) 
 console.log(arrrr)
+
+

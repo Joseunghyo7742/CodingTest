@@ -53,3 +53,10 @@ function solution(today, terms, privacies) {
   
   return answer;
 }
+
+//Map
+  //Map.set()
+  const map1= new Map();
+  map1.set('key','value');
+  console.log(map1.get('key'))
+  console.log(map1.get('undefined'))
