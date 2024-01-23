@@ -3,8 +3,12 @@ a=[1,3,45,2,10]
 a.forEach((e,i)=> {
   console.log(e,i)
 })
+//배열 순회 for of
+for (let A of a) {
+  console.log(A)
+}
 
-//split
+//String.split => array
 const str="Hello world";
 const ret=str.split(" ");
 str.split("")
@@ -67,19 +71,57 @@ console.log(Object.keys(obj1)) // Array["a","b","c"]
 console.log(Object.values(obj1))
 
 //Object.entries: 주어진 객체의 속성 키& 값 배열로 반환
-console.log(Object.entries(obj1)) //Array[["a",'sth'],['b',42]..]
+console.log(Object.entries(obj1)) //Array[["a",'sth'],['b',42]..] 
 
-//Math.round
 
-//Math.ceil
+//Object.fromEntries() : 키값 쌍의 목록을 객체로 바꿈
+const entries= Object.entries(obj1)
+const obj2= Object.fromEntries(entries)
+console.log(obj2)
 
-//Math.floor
+//Math.round: 입력값을 반올림한 수와 가장 가까운 정수 값 반환
+console.log(Math.round(0.9))
+console.log(Math.round(-5.5)) 
+
+//Math.ceil:  주어진 수보다 >= 중 가장 작은 정수
+console.log(Math.ceil(5.4)) //6
+
+//Math.floor: 주어진 수보다 <= 중 가장 큰 정수
+console.log(Math.floor(5.05)) //5
 
 //Math.abs
 
-//정렬 sort
-let numbers=[3,1,2,9,2]
+//정렬 sort(정렬 기준 콜백함수)
+  //* a>b  양수, a<b 음수 
+let numbers=[100,3,1,2,9,2] //
+
+console.log("정렬실수",numbers.sort()) // 정렬하기 전에 배열 내의 값을 내부적으로 문자열로 변환
+//문자열 대소비교에서는 첫 번째 글자가 크면 뒤가 아무리 더 큰 글자가 있어도 결과 영향 x
+
 numbers= numbers.sort((a,b)=> a-b) //오름차순 정렬
 console.log(numbers)
 numbers = numbers.sort((a,b)=> (a-b)*-1) //내림차순 정렬
 console.log(numbers)
+
+
+//Array.filter(callbackFn) :콜백함수 통과요소로 구성된 배열, 없으면 빈배열
+  //얕은 복사: 원본 객체와 같은 참조를 고유하는 복사, 복사본 변경시 원본도 변경될 수 있다. 
+const test6 = numbers.filter( e=> e%2 ==0) 
+console.log(test6, numbers)
+
+
+//Array.reduce(callback[,intialValue])
+  //callback( 누적반환값, 처리할 현재요소, 처리할현재인덱스, 호출한 배열)
+const test7= [1,2,3,4,5]
+const res= test7.reduce((total,e)=> total+e, 100)
+console.log(res)
+
+//Date
+const date= new Date(1999,2,4) //월은 0부터 시작
+console.log(date)
+const dateTest= new Date('2022.01.05')
+console.log(dateTest)
+
+const date2= "1999.02.03"
+const arrrr= date2.split(".").map(Number) 
+console.log(arrrr)
