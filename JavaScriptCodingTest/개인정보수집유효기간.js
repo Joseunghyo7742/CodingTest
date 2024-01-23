@@ -10,12 +10,12 @@ function solution(today, terms, privacies) {
       const dateArr= date.split(".").map(Number) //YYYY.MM.DD -> 숫자배열로 
       const totalDays= dateArr.reduce((total,e,i)=>{
           switch(i){
-              case(0):
-                  return total+=e*yearDays;
-              case(1):
-                  return total+=e*day
-              case(3):
-                  return total+=e
+              case 0:
+                  return total+e*yearDays;
+              case 1:
+                  return total+e*day
+              case 2:
+                  return total+e
               default:
                   return e
           }
@@ -35,13 +35,15 @@ function solution(today, terms, privacies) {
     const type= info[1]
     
     const gapLimit = Number(term_table[type])*28 //대괄호표기법으로 찾자 . 유효기간을 일 수로 계산
-    console.log("gapLimit",gapLimit)
+    // console.log("gapLimit",type, term_table[type],gapLimit)
     
     const gap = getDays(today)-getDays(created_at)
-      console.log("gap",gap)
+    // console.log("getDays(today)",getDays(today))
+    //   console.log("getDays(created_at)",getDays(created_at))
+    //   console.log("gap",gap)
     
     if(gap>=gapLimit){
-        result.append(index+1)
+        answer.push(index+1)
     }
     
     
