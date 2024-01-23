@@ -16,12 +16,13 @@ function solution(today, terms, privacies) {
         terms_table.set(type,Number(month)*month_days) //key-value set
     } )
     
-    const answer=privacies.map((info, index)=>{
+    let answer=[]
+    privacies.forEach((info, index)=>{
         const [createdAt,createdType]= info.split(" ")
         const gap= getTotalDays(today)- getTotalDays(createdAt)
-        if(gap>= terms_table[createdType])
-            return index+1
+        if(gap>= terms_table.get(createdType))
+            answer.push(index+1)
     })
     
-   return answer
+  return answer
 }
