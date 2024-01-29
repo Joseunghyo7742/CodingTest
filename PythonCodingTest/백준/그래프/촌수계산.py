@@ -22,10 +22,11 @@ def dfs(x,y,rel):
     exit()
   else:
     for i in graph[x]:
-      if(visited[i]==False):
-        dfs(i,y,rel+1)
-    return -1
+      if(visited[i]==True):
+        continue
+      dfs(i,y,rel+1)
+    return
     
 
-result=dfs(a,b,0)
-print(result)
+dfs(a,b,0)
+print(-1)
