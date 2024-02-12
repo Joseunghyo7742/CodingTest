@@ -38,10 +38,7 @@ function solution(today, terms, privacies) {
     // console.log("gapLimit",type, term_table[type],gapLimit)
     
     const gap = getDays(today)-getDays(created_at)
-    // console.log("getDays(today)",getDays(today))
-    //   console.log("getDays(created_at)",getDays(created_at))
-    //   console.log("gap",gap)
-    
+
     if(gap>=gapLimit){
         answer.push(index+1)
     }

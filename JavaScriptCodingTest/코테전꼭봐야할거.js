@@ -127,3 +127,53 @@ const arrrr= date2.split(".").map(Number)
 console.log(arrrr)
 
 
+//DFS
+const graph= {
+  1: [2,3],
+  2: [4],
+  3: [4,5],
+  4:[],
+  5:[],
+}
+const dfs=(here, visited=new Set())=>{
+  if(visited.has(here)) return //방문한 곳이라면 넘어가고
+  visited.add(here)//방문처리 
+  graph[here].forEach(e=>dfs(e,visited)) //그래프 순회 
+}
+
+//이진탐색
+const a= [1,2,3,4,5,6,7]
+const bs= ()=>{
+  let low = 0; //배열의 첫째
+  let high= a.length-1; //배열 끝점
+  while(low <= high){
+    let mid=Math.floor((low+high)/2);
+    if(a[mid]== target){
+      console.log(target)
+      return
+    }else if(a[mid] > target) {
+      high= mid-1
+    }else{
+      low= mid+1
+    }
+  }
+  return -1
+}
+bs()
+
+//배열만들기
+let arrr = Array(50).fill(0) 
+let second= Array(10).fill().map(e=> Array(5).fill(1)) //이차원배열 
+
+//피보나치
+const fibo =(index, memo={})=>{
+  if(index<=2) return 1
+  if(index in memo) return memo[index]
+  memo[index] = fibo(index-1,memo)+ fibo(index-2,memo)
+  return memo[index]
+}
+const ret= fibo(10)
+
+//배열 수합
+const arr=[1,2,3,4,5]
+[arr[1],arr[3]]= [arr[3],arr[1]]
