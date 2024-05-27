@@ -17,6 +17,8 @@ else {
   const error_n = brokens?.split(' ') || []; //고장번호들
 
   for (let i = 0; i < 1000000; i++) {
+
+    
     const str = i.toString();
     let isValid = true;
 
