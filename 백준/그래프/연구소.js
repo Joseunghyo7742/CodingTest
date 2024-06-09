@@ -32,6 +32,7 @@ function bfs(map) {
     }
   }
 }
+//0의 개수 세기 
 function countBlanks(arr) {
   let count = 0;
   for (let i = 0; i < n; i++) {
@@ -45,10 +46,14 @@ function countBlanks(arr) {
 }
 
 let result = 0;
+
+//벽세우기 전략이 생각나지않으면 그냥 하나씩 다 세워보자 
+//벽세우기 재귀함수 
 function makeWall(count) {
   if (count === 3) {
+    //맵 깊은 복사 
     const copy_map = map.map((row) => [...row]);
-    bfs(copy_map);
+    bfs(copy_map); 
     result = Math.max(result, countBlanks(copy_map));
     return;
   }
@@ -56,7 +61,7 @@ function makeWall(count) {
     for (let j = 0; j < m; j++) {
       if (map[i][j] === 0) {
         map[i][j] = 1;
-        makeWall(count + 1);
+        makeWall(count + 1); //재귀함수 
         map[i][j] = 0; //맵 원상복구
       }
     }
