@@ -8,7 +8,8 @@ const [n, ...arr] = input;
 function solve1() {
   // 산술평균 : N개의 수들의 합을 N으로 나눈 값
   const result = arr.reduce((acc, curr) => acc + curr);
-  return Math.floor(result / n);
+  const temp = Math.round(result / n);
+  return temp === -0 ? 0 : temp;
 }
 function solve2() {
   // 중앙값 : N개의 수들을 증가하는 순서로 나열했을 경우 그 중앙에 위치하는 값
@@ -39,3 +40,12 @@ console.log(solve1());
 console.log(solve2());
 console.log(solve3());
 console.log(solve4());
+// 3
+// 0
+// 0
+// -1
+
+// 0
+// 0
+// 0
+// 1
