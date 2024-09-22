@@ -8,6 +8,7 @@ for i in range(k): #1: submerged area
 
 dx=[0,0,-1,1]
 dy=[-1,1,0,0]
+
 lake_max_size=0
 size=0
 def dfs(x,y):
