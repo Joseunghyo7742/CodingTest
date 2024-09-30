@@ -10,3 +10,5 @@ print(q)
 
 q.rotate(3)
 print(q)
+print(q)
+print(q.index(7))
