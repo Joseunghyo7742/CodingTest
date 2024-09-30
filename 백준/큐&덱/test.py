@@ -12,3 +12,7 @@ q.rotate(3)
 print(q)
 print(q)
 print(q.index(7))
+
+
+stack=[] 
+print(stack[-1])#error
