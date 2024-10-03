@@ -35,7 +35,7 @@ count=0
 for i in range(n):
   for j in range(m):
     if(draw[i][j]==1):
-      draw[i][j]=0
+      draw[i][j]=0 #처음에 들어가는것 주의하기 
       value= max(bfs(i,j),value)
       count+=1
       
