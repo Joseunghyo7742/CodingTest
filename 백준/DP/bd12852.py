@@ -14,31 +14,14 @@ for i in range(2,n+1):
   if(i%2==0):
     a= track[i//2]
     if(len(prev)>len(a)):
-      temp.extend(a)
-    else:
-      temp.extend(prev)
-  elif(i%3==0):
+      prev=a
+  if(i%3==0):
     b= track[i//3]
     if(len(prev)>len(b)):
-      temp.extend(b)
-    else:
-      temp.extend(prev)
+      prev=b
+  temp.extend(prev)
   track.append(temp)
   
-  # if(i%3 ==0):
-  #   #d[k]= d[k//3]+1
-  #   temp.extend(track[i//3])
-  # elif(i%2==0):
-  #   #d[k]= d[k//2]+1
-  #   a= track[i//2]
-  #   b= track[i-1]
-  #   if(len(b)<len(a)):
-  #     temp.extend(b)
-  #   else:
-  #     temp.extend(track[i//2])
-  # else:
-  #   temp.extend(track[i-1])
-  track.append(temp)
 
 print(len(track[n])-1)
 print(*track[n])
