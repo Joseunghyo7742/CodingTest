@@ -6,9 +6,9 @@
 
 
 n= int(input())
-track=[[1]]
+track=[[0],[1]]
 
-for i in range(1,n+1):
+for i in range(2,n+1):
   temp=[i]
   if(i%3 ==0):
     #d[k]= d[k//3]+1
