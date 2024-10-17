@@ -8,7 +8,7 @@
 n= int(input())
 track=[[1]]
 
-for i in n:
+for i in range(1,n+1):
   temp=[i]
   if(i%3 ==0):
     #d[k]= d[k//3]+1
@@ -20,5 +20,4 @@ for i in n:
     temp.extend(track[i-1])
   track.append(temp)
 
-console.log(track)
-  
+print(track)  
