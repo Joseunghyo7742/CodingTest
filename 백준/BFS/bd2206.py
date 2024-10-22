@@ -13,33 +13,30 @@ for _ in range(n):
 dr=[0,0,-1,1]
 dc=[1,-1,0,0]
 
+#3차원배열 move[c][r][break] 
+move=[[[0,0] for _ in range(m)] for _ in range(n)]
 
-
-# r,c,sum,tf
 def bfs(r,c):
   q= deque()
-  q.append([r,c,1,False])
-  miro[r][c]=2
+  q.append([r,c,0])
+  move[r][c][0]=1
   while(q):
-    r,c,s,w=q.popleft()
-    if(r==n-1 and c==m-1):
+    r,c,count=q.popleft()
+    if(r,c)==(n-1,m-1):
+      return move[r][c][count]
+    for i in range(4):
       nr= dr[i]+ r
       nc= dc[i]+ c
-      return s
-    for i in range(4):
       if(nr<0 or nr>=n or nc<0 or nc>=m):
         continue
-      if(miro[nr][nc]==0):
-        miro[nr][nc]=2
-        q.append([nr,nc,s+1,w])
-      elif(miro[nr][nc]==1):
-        if(w): continue
-        else: 
-          miro[nr][nc]=2
-          q.append([nr,nc,s+1,not w])
-      
+      #벽인 경우 부순다. 
+      if(miro[nr][nc]==1 and count==0):
+        move[nr][nc][1] = move[r][c][0]+1 
+        q.append([nr,nc,1])
+      #이동 가능, 아직 방문하지 않은 곳 
+      if(miro[nr][nc]==0 and move[nr][nc][count]==0):
+        move[nr][nc][count] = move[r][c][count]+1 
+        q.append([nr,nc,count])
   return -1
 
-
-result= bfs(0,0)
-print(result)
+print(bfs(0,0))
