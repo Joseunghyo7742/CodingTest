@@ -13,27 +13,33 @@ for _ in range(n):
 dr=[0,0,-1,1]
 dc=[1,-1,0,0]
 
+
+
+# r,c,sum,tf
 def bfs(r,c):
   q= deque()
-  q.append([r,c])
+  q.append([r,c,1,False])
   miro[r][c]=2
-  count=1
   while(q):
-    r,c=q.popleft()
-    for i in range(4):
+    r,c,s,w=q.popleft()
+    if(r==n-1 and c==m-1):
       nr= dr[i]+ r
       nc= dc[i]+ c
-      if(nr<0 or nr>=r or nc<0 or nc>=c):
+      return s
+    for i in range(4):
+      if(nr<0 or nr>=n or nc<0 or nc>=m):
         continue
       if(miro[nr][nc]==0):
         miro[nr][nc]=2
-        count+=1
-        q.append([nr,nc])
-        print(q)
-  
-  if(miro[n-1][m-1]==2): return -1
-  else: return count
+        q.append([nr,nc,s+1,w])
+      elif(miro[nr][nc]==1):
+        if(w): continue
+        else: 
+          miro[nr][nc]=2
+          q.append([nr,nc,s+1,not w])
+      
+  return -1
 
 
 result= bfs(0,0)
-print(result,miro)
+print(result)
