@@ -5,11 +5,10 @@ def mul(a,b,c):
   if b==1:
     return a%c
   
-  temp = solution(a,b//2,c)
+  temp = mul(a,b//2,c)
   
   if b%2 ==1:
     return ((temp*temp)%c) * a%c
   else:
     return(temp* temp) %c 
-  
   
