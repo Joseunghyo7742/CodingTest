@@ -6,6 +6,16 @@
 # 계단의 개수는 300이하의 자연수이고, 계단에 쓰여 있는 점수는 10,000이하의 자연수이다.
 
 n= int(input())
-stairs=list(map(int,input().split()))
+stairs=[]
 
-#한번 밟았는지 두번밟았는지
+for _ in range(n):
+  stairs.append(int(input()))
+
+d=[[0,0],[stairs[0],stairs[0]]]  
+
+for i in range(2,n+1):
+  a= max(d[i-2][1], d[i-2][0]) + stairs[i-1]
+  b= d[i-1][0] +stairs[i-1]
+  d.append([a,b])
+
+print(max(d[n][0],d[n][1]))
