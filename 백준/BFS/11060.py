@@ -24,6 +24,7 @@ from collections import deque
 n= int(input())
 A= list(map(int,input().split()))
 
+
 visited=[False] *n
 
 def BFS(s):
@@ -36,12 +37,14 @@ def BFS(s):
     if(curr==n-1):
       print(cnt)
       exit()
-    for i in range(curr):
+    for i in range(A[curr]+1):
       # 범위안에 뛰어보면서 방문하지 않았으면 추가하기
       new= curr+i
-      if(visited[new] or new>=n):
+      if( new>=n or visited[new] ):
         continue
+      visited[new]=True
       q.append([new,cnt+1])
+  print(-1)
 
-
+visited[0]=True
 BFS(0)
