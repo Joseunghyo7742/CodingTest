@@ -16,6 +16,7 @@ dc=[1,-1,0,0]
 #3차원배열 move[c][r][break] 
 move=[[[0,0] for _ in range(m)] for _ in range(n)]
 
+print(move)
 def bfs(r,c):
   q= deque()
   q.append([r,c,0])
