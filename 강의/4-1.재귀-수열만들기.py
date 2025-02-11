@@ -23,18 +23,27 @@
 3 4
 4 4
 '''
+# def recur_1(number,output):
+#   if number==M:
+#     print(output)
+#     return
+#   for i in range(1, N+1):
+#     recur1(number+1, output+str(i)+" ")
+    
+
+
 
 def recur(i):
-  if i== m:
+  if i == m:
     print(*arr)
     return
   for j in range(1,n+1):
     if visited[j]:
       continue
     visited[j]=1
-    arr.append(j)
-    recur(i+1)
-    arr.pop()
+    arr.append(j) # 추가하고 
+    recur(i+1) # 반복 후
+    arr.pop() # 다시 삭제해줘야 함 
     visited[j]=0
 
 arr=[]
