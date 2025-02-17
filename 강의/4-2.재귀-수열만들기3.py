@@ -13,3 +13,4 @@ n,m = list(map(int,input().split()))
 arr=[] # 만들어진 수열
 
 curr(0)
+
