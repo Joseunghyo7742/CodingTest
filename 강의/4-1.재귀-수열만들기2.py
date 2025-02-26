@@ -15,7 +15,7 @@ def recur(i):
     visited[j]=1
     arr.append(j)
     recur(i+1)
-    arr.pop(j)
+    arr.pop()
     visited[j]=0
     
     
