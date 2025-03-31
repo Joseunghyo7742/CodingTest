@@ -22,7 +22,7 @@ for i in range(n):
     result.append('-')
   else:
     print("NO")
-    exit()
+    exit
 
 for i in result:
   print(i)

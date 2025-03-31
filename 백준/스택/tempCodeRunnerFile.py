@@ -15,7 +15,7 @@ n= int(input())
 tops= list(map(int,input().split()))
 t.extend(tops)
 
-result=[]
+result=[0]
 stack=[[0,t[0]]] # 인덱스, 탑높이
 
 for i in range(1,n+1):
@@ -23,5 +23,6 @@ for i in range(1,n+1):
     stack.pop()
   result.append(stack[-1][0])
   stack.append([i,t[i]])
+
 
 print(*result)
