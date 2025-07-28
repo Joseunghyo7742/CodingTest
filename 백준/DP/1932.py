@@ -17,7 +17,7 @@ for k in range(1,n):
     if(j==0):
       dp[k][j]= tri[k][j]+dp[k-1][j]
     elif(j==k):
-      dp[k][j]+= tri[k][j]+dp[k-1][j-1]
+      dp[k][j]+= tri[k][j]+dp[k-1][j-1]   
     else:
       dp[k][j]= tri[k][j]+max(dp[k-1][j], dp[k-1][j-1])
 
