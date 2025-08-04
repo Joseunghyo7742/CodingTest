@@ -15,5 +15,3 @@ for i in range(n):
   stack.append(height)
   
 print(result)
-  
-  
