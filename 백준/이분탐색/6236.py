@@ -29,7 +29,7 @@ def binary_search():
     
     if deposit>m:
       st= mid+1 # mid보다 더 큰 돈을 인출해야 함
-    else:
+    else: # 인출 횟수가 작거나 같을 떄
       result= mid # mid는 조건을 만족함
       en= mid-1 # 더 작은 경우도 만족할지 확인 
   return result
