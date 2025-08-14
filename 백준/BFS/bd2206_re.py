@@ -6,7 +6,7 @@ miro=[]
 
 check =[[[0,0] for _ in range(m)] for _ in range(n)]
 # 첫번째 층은 벽을 안뚫은 상태일 때, 2층은 벽을 뚫었을 때.
-for _ in range(n):
+for _ in range(m):
   miro.append(list(map(int,input())))
 
 dr=[0,0,-1,1]
