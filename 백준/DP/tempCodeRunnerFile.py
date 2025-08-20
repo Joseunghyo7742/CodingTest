@@ -21,7 +21,7 @@ for _ in range(n):
 
   
 
-dp=[[0]*3 for _ in range(n)]
+dp=[[0]*n for _ in range(n)]
 # dp[i][c] i번째 집을 c색으로 칠했을 때, 0~i번쨰 집까지의 최소 비용
 
 dp[0]= cost[0]
@@ -29,4 +29,5 @@ for i in range(1,n):
   for j in range(3):
     dp[i][j]=cost[i][j]+min(dp[i-1][(j+1)%3], dp[i-1][(j+2)%3])
   
+
 print(min(dp[n-1]))
